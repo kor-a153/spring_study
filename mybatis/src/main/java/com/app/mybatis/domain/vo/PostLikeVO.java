@@ -5,9 +5,8 @@ import org.springframework.stereotype.Component;
 
 @Component
 @Data
-public class MemberVO {
+public class PostLikeVO {
     private Long id;
-    private String memberEmail;
-    private String memberPassword;
-    private String memberName;
+    private Long postId;
+    private Long memberId;
 }
