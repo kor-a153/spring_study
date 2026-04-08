@@ -8,9 +8,9 @@
 
     <typeAliases>
         <!-- DTO Alias -->
-        <typeAlias type="com.app.controller.domain.dto.PostDTO" alias="PostDTO"></typeAlias>
+        <typeAlias type="com.app.threetier.domain.dto.PostDTO" alias="PostDTO"></typeAlias>
 
         <!-- VO Alias -->
-        <typeAlias type="com.app.controller.domain.vo.MemberVO" alias="MemberVO"></typeAlias>
+        <typeAlias type="com.app.threetier.domain.vo.MemberVO" alias="MemberVO"></typeAlias>
     </typeAliases>
 </configuration>
