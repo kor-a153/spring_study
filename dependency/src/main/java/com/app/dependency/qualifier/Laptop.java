@@ -3,8 +3,8 @@ package com.app.dependency.qualifier;
 import lombok.Data;
 import org.springframework.stereotype.Component;
 
-    @Component
-    @Data
+@Component
+@Data
 public class Laptop implements Computer {
     @Override
     public int getScreenSize() {

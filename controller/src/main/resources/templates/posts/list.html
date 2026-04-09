@@ -8,9 +8,9 @@
     <title>게시판 목록</title>
 </head>
 <body>
-<!--    게시판 리스트 화면에 출력하기 -->
+<!-- 게시판 리스트 화면에 출력하기 -->
 <th:block th:if="${#lists.size(posts) != 0}">
-    <table border="1">
+    <table>
         <tr>
             <th>번호</th>
             <th>제목</th>
@@ -26,8 +26,6 @@
             </tr>
         </th:block>
     </table>
-
-
 </th:block>
 <th:block th:unless="${#lists.size(posts) != 0}">
     <h1>게시글이 없습니다.</h1>

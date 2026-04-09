@@ -10,6 +10,7 @@ server:
 #    username: hr
 #    password: 1234
 
+
 # mybatis
 spring:
   datasource:

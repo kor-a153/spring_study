@@ -16,6 +16,6 @@ public class ComputerTest {
     @Test
     public void laptopComputer(){
         log.info("computer : {}", computer);
-        log.info("computer.getScreenSize() : {}", computer.getScreenSize());
+        log.info("computer.getScreensize() : {}", computer.getScreenSize());
     }
 }

@@ -9,7 +9,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 @Slf4j // log에 결과를 출력
 public class DiTest {
 
-    //    Test에서는 생성자 주입을 받을 수 없다. 그래서 직접 오토와이어드로 연결해줘야함
+//    Test에서는 생성자 주입을 받을 수 없다.
     // 필드 주입
     @Autowired
     private Coding coding;
@@ -32,8 +32,8 @@ public class DiTest {
     }
 
     @Test
-    public void loginTest() {
+    public void loginTest(){
         log.info("loginTest");
-        log.info("login {}", login.getMember());
+        log.info("login: {}", login);
     }
 }

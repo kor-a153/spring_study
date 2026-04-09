@@ -10,7 +10,7 @@ public class PostDTO {
     private String postTitle;
     private String postContent;
     private Long memberId;
-    private Long PostReadCount;
-    private String MemberEmail;
-    private String MemberName;
+    private Long postReadCount;
+    private String memberEmail;
+    private String memberName;
 }

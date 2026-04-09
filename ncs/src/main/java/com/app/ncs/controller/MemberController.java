@@ -10,7 +10,6 @@ import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import org.springframework.web.servlet.view.RedirectView;
 
 import java.util.Optional;
@@ -22,66 +21,56 @@ public class MemberController {
 
     private final MemberMapper memberMapper;
     private final HttpSession session;
-//--------- 회원가입
+
     @GetMapping("join")
-    public void goToJoin(MemberVO memberVO) {;}
+    public void goToJoin(MemberVO memberVO){;}
 
     @PostMapping("join")
-    public RedirectView join(MemberVO memberVO) {
+    public RedirectView join(MemberVO memberVO){
         memberMapper.insert(memberVO);
         return new RedirectView("/members/login");
     }
 
-//    ------------------- 로그인
     @GetMapping("login")
-    public void goToLogin(MemberVO memberVO) {;}
+    public void goToLogin(MemberVO memberVO){;}
 
     @PostMapping("login")
-    public RedirectView login(MemberVO memberVO, RedirectAttributes redirectAttributes) {
-        Optional<MemberVO> found = memberMapper.selectMemberEmailAndMemberPassword(memberVO);
-
-// 멤버 정보가 없다면.
-        if (found.isEmpty()) {
-            redirectAttributes.addFlashAttribute("isLogin", false);
-            return new RedirectView("/members/login");
+    public RedirectView login(MemberVO memberVO){
+        Optional<MemberVO> optionalMemberVO = memberMapper.select(memberVO);
+        if(optionalMemberVO.isPresent()){
+            session.setAttribute("member", optionalMemberVO.get());
+            return new RedirectView("/members/my-page");
         }
-
-        session.setAttribute("member", found.get());
-        return new RedirectView("/members/my-page");
+        return new RedirectView("/members/login");
     }
 
-//    ------------마이페이지
     @GetMapping("my-page")
-    public void goToMyPage() {;}
+    public void goToMyPage(){;}
 
-//    -------------- 수정
     @GetMapping("update")
-    public void goToUpdate(Model model) {
+    public void goToUpdate(Model model){
         model.addAttribute("member", session.getAttribute("member"));
     }
 
     @PostMapping("update")
-    public RedirectView update(MemberVO memberVO) {
+    public RedirectView update(MemberVO memberVO){
         memberMapper.update(memberVO);
-        Optional<MemberVO> found = memberMapper.selectMemberEmailAndMemberPassword(memberVO);
-        if(found.isPresent()){
-            session.setAttribute("member" , found);
+        Optional<MemberVO> optionalMemberVO = memberMapper.select(memberVO);
+        if(optionalMemberVO.isPresent()) {
+            session.setAttribute("member", optionalMemberVO.get());
         }
         return new RedirectView("/members/my-page");
     }
-// --------- 로그아웃
-   public RedirectView logout() {
-        session.
 
-                return new RedirectView("/member/login");
-   }
+    public RedirectView logout(){
+        session.removeAttribute("member");
+        return new RedirectView("/members/login");
+    }
 
-
-//------------삭제
     @DeleteMapping("withdraw")
-    public RedirectView withdraw() {
-        MemberVO member = (MemberVO) session.getAttribute("member");
-        memberMapper.delete(member.getId());
+    public RedirectView withdraw(){
+        MemberVO memberVO = (MemberVO) session.getAttribute("member");
+        memberMapper.delete(memberVO.getId());
         return new RedirectView("/members/join");
     }
 }

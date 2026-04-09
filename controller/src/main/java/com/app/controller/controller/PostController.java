@@ -15,7 +15,7 @@ public class PostController {
     private final PostMapper postMapper;
 
     @GetMapping("/list")
-    public void goToList(Model model){
+    public void goTolist(Model model) {
         model.addAttribute("posts", postMapper.selectAll());
     }
 }

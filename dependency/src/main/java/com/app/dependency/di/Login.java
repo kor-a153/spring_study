@@ -3,8 +3,8 @@ package com.app.dependency.di;
 import lombok.Data;
 import org.springframework.stereotype.Component;
 
-    @Component
-    @Data
+@Component
+@Data
 public class Login {
-    private Member member;
+    private final Member member;
 }

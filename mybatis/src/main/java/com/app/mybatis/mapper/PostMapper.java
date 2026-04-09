@@ -16,7 +16,6 @@ public interface PostMapper {
     public void delete(Long id);
     public void updatePostReadCount(Long id);
     public List<PostDTO> selectAllWithOrder(HashMap<String, Object> orders);
-
     public PostCountDTO selectTotalPostCountAndTotalPageCount(int limit);
     public List<PostDTO> selectAllWithKeyword(String keyword);
 }

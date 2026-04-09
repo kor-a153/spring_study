@@ -1,6 +1,5 @@
 package com.app.mybatis.domain.dto;
 
-
 import lombok.Data;
 import org.springframework.stereotype.Component;
 

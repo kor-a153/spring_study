@@ -6,7 +6,6 @@ import com.app.mybatis.domain.dto.PostResponseDTO;
 import com.app.mybatis.domain.vo.MemberVO;
 import com.app.mybatis.domain.vo.PostLikeVO;
 import com.app.mybatis.domain.vo.PostVO;
-import lombok.ToString;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -118,7 +117,7 @@ public class PostMapperTests {
         log.info("totalCountDTO: {}", postCountDTO);
     }
 
-//    게시판 목록 조회
+    //    게시판 목록 조회
     @Test
     public void selectPostsTest(){
         int limit = 10;
@@ -148,18 +147,17 @@ public class PostMapperTests {
         log.info("posts: {}", posts);
     }
 
-    /* 좋아요 */
     @Test
-    public void postLikeTest1 (){
+    public void postLikeTest1(){
         PostLikeVO postLikeVO = new PostLikeVO();
 
-//        1 ~ 50
-        for(int i = 1; i <= 50; i++){
+//        1~50
+        for(int i = 1; i <= 50; i++) {
             Random random = new Random();
             int randomNumber = random.nextInt(1, 51);
             postLikeVO.setPostId(Long.valueOf(randomNumber));
 
-            randomNumber = random.nextInt(1, 4);
+            randomNumber = random.nextInt(1, 3);
             postLikeVO.setMemberId(Long.valueOf(randomNumber));
             postLikeMapper.insert(postLikeVO);
         }

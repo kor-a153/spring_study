@@ -12,3 +12,5 @@ public class PostVO {
     private Long memberId;
     private Long postReadCount;
 }
+
+

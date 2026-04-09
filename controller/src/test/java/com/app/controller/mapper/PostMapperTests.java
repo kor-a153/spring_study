@@ -5,15 +5,16 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
-@SpringBootTest
 @Slf4j
+@SpringBootTest
 public class PostMapperTests {
 
     @Autowired
     private PostMapper postMapper;
 
     @Test
-    public void postSelectAllTest(){
+    public void postSelectAllTest() {
         log.info("posts: {}", postMapper.selectAll());
     }
+
 }

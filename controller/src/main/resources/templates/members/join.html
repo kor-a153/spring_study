@@ -14,12 +14,12 @@
     </style>
 </head>
 <body>
-    <form th:action="@{/members/join}" method="post" th:object="${memberVO}">
-        <input type="text" th:field="*{memberEmail}" placeholder="이메일" />
-        <input type="password" th:field="*{memberPassword}" placeholder="비밀번호" />
-        <input type="text" th:field="*{memberName}" placeholder="이름" />
-        <button type="button">회원가입</button>
-    </form>
+<form th:action="@{/members/join}" method="post" th:object="${memberVO}">
+    <input type="text" th:field="*{memberEmail}" placeholder="이메일" />
+    <input type="password" th:field="*{memberPassword}" placeholder="비밀번호" />
+    <input type="text" th:field="*{memberName}" placeholder="이름" />
+    <button type="button">회원가입</button>
+</form>
 </body>
 <script>
     const inputs = document.querySelectorAll("input");
@@ -28,7 +28,7 @@
 
     btn.addEventListener('click', () => {
         for(let input of inputs) {
-            if(!input.value) return alert(input.name + " 값이 없습니다.")
+            if(!input.value) return alert(input.name + "값이 없습니다.")
         }
         form.submit();
     });

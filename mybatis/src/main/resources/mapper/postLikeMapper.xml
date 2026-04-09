@@ -9,7 +9,6 @@
 
     <!-- 좋아요 취소 -->
     <delete id="delete" parameterType="Long">
-        DELETE FROM TBL_POST_LIKE
-        WHERE ID = #{id}
+        DELETE FROM TBL_POST_LIKE WHERE ID = #{id}
     </delete>
 </mapper>

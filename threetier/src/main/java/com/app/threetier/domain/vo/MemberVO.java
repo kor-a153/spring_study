@@ -13,12 +13,3 @@ public class MemberVO implements Serializable {
     private String memberPassword;
     private String memberName;
 }
-
-
-
-
-
-
-
-
-
