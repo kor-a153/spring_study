@@ -42,6 +42,7 @@ public class PostServiceImpl implements PostService {
         postDAO.updateReadCount(id);
     }
 
+    @Override
     public void deletePost(Long id) {
         postDAO.delete(id);
     }

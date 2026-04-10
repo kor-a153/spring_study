@@ -1,6 +1,7 @@
 package com.app.threetier.controller;
 
 import com.app.threetier.domain.vo.PostVO;
+import com.app.threetier.mapper.PostMapper;
 import com.app.threetier.service.PostService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
@@ -18,28 +19,28 @@ public class PostController {
     private final PostService postService;
 
     @GetMapping("/list")
-    public void goTolist(Model model) {
+    public void goToList(Model model){
         model.addAttribute("posts", postService.getPosts());
     }
 
     @GetMapping("/read")
-    public void goToRead(Long id, Model model) {
+    public void goToRead(Long id, Model model){
         model.addAttribute("post", postService.getPost(id));
     }
 
     @GetMapping("/update")
-    public void goToUpdate(Long id, Model model) {
+    public void goToUpdate(Long id, Model model){
         model.addAttribute("post", postService.getPost(id));
     }
 
     @PostMapping("/update-ok")
-    public RedirectView updateOk(PostVO postVO) {
+    public RedirectView updateOk(PostVO postVO){
         postService.updatePost(postVO);
         return new RedirectView("/posts/read?id=" + postVO.getId());
     }
 
     @GetMapping("/delete-ok")
-    public RedirectView deleteOk(Long id) {
+    public RedirectView deleteOk(Long id){
         postService.deletePost(id);
         return new RedirectView("/posts/list");
     }

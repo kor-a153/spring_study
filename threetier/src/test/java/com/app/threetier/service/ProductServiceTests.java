@@ -6,28 +6,21 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
-import java.util.List;
-
-@Slf4j
 @SpringBootTest
+@Slf4j
 public class ProductServiceTests {
 
     @Autowired
     private ProductService productService;
-    @Autowired
-    private ProductVO productVO;
 
     @Test
-    public void insertTest(){
+    public void registerProductTest(){
         ProductVO productVO = new ProductVO();
-        productVO.setProductName("test1");
-        productVO.setProductPrice(2000L);
-        productVO.setProductStock(3L);
-        productVO.setProductBrand("test11");
-
+        productVO.setProductName("규혁이의 마스크");
+        productVO.setProductPrice(10000);
+        productVO.setProductBrand("뀨잉");
+        productVO.setProductStock(50);
         productService.registerProduct(productVO);
-
-        log.info("등록 성공: {}", productVO);
     }
 
 }

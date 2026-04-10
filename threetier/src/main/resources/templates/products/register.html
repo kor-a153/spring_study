@@ -8,22 +8,24 @@
     <title>상품 등록</title>
 </head>
 <body>
-    <h1>상품 등록</h1>
     <form th:action="@{/products/register}" method="post" th:object="${productVO}">
         <div>
-            <input type="text" th:field="*{productName}" placeholder="상품이름">
+            <span>상품 이름</span>
+            <input type="text" th:field="*{productName}" />
         </div>
         <div>
-            <input type="number" th:field="*{productPrice}" placeholder="상품가격">
+            <span>상품 가격</span>
+            <input type="text" th:field="*{productPrice}" />
         </div>
         <div>
-            <input type="number" th:field="*{productStock}" placeholder="상품재고">
+            <span>상품 재고</span>
+            <input type="text" th:field="*{productStock}" />
         </div>
         <div>
-            <input type="text" th:field="*{productBrand}" placeholder="브랜드">
+            <span>브랜드명</span>
+            <input type="text" th:field="*{productBrand}" />
         </div>
-        <button type="submit">등록 완료</button>
-
+        <button>상품 등록</button>
     </form>
 </body>
 </html>

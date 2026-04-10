@@ -6,12 +6,12 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
-@Slf4j
 @SpringBootTest
+@Slf4j
 public class PostServiceTests {
 
     @Autowired
-    private PostService postService; // 업캐스팅
+    private PostService postService;
 
     @Test
     void getPostTest(){
@@ -36,7 +36,6 @@ public class PostServiceTests {
 
     @Test
     public void deletePostTest(){
-        postService.deletePost(2L);
+        postService.deletePost(49L);
     }
-
 }

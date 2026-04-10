@@ -22,8 +22,7 @@
 
     <update id="update" parameterType="PostVO">
         UPDATE TBL_POST
-        SET POST_TITLE = #{postTitle},
-            POST_CONTENT = #{postContent}
+        SET POST_TITLE = #{postTitle}, POST_CONTENT = #{postContent}
         WHERE ID = #{id}
     </update>
 
