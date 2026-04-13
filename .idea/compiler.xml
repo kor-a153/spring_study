@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Gradle Imported" enabled="true">
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="false">
+          <entry name="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.projectlombok/lombok/1.18.40/398c6d2d7c42c96b65e78d2ddc9be0058c163453/lombok-1.18.40.jar" />
+          <entry name="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.springframework.boot/spring-boot-configuration-processor/3.5.6/4ba6e02d49cd0e963fa1c4a95b875abf083606fe/spring-boot-configuration-processor-3.5.6.jar" />
+        </processorPath>
+        <module name="ncs.main" />
+      </profile>
+      <profile name="Gradle Imported" enabled="true">
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="false">
+          <entry name="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.projectlombok/lombok/1.18.40/398c6d2d7c42c96b65e78d2ddc9be0058c163453/lombok-1.18.40.jar" />
+        </processorPath>
+        <module name="ncs.test" />
+      </profile>
+    </annotationProcessing>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="controller" options="-parameters" />
+      <module name="controller.main" options="-parameters" />
+      <module name="controller.test" options="-parameters" />
+      <module name="dependency" options="-parameters" />
+      <module name="dependency.main" options="-parameters" />
+      <module name="dependency.test" options="-parameters" />
+      <module name="mybatis" options="-parameters" />
+      <module name="mybatis.main" options="-parameters" />
+      <module name="mybatis.test" options="-parameters" />
+      <module name="ncs" options="-parameters" />
+      <module name="ncs.main" options="-parameters" />
+      <module name="ncs.test" options="-parameters" />
+      <module name="restful" options="-parameters" />
+      <module name="restful.main" options="-parameters" />
+      <module name="restful.test" options="-parameters" />
+      <module name="test" options="-parameters" />
+      <module name="test.main" options="-parameters" />
+      <module name="test.test" options="-parameters" />
+      <module name="threetier" options="-parameters" />
+      <module name="threetier.main" options="-parameters" />
+      <module name="threetier.test" options="-parameters" />
+    </option>
+  </component>
+</project>
