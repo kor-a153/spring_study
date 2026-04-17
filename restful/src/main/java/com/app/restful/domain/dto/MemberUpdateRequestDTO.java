@@ -6,7 +6,7 @@ import org.springframework.stereotype.Component;
 
 @Component
 @Data
-@Schema(description = "회원 수정 DTO")
+@Schema(description = "회원 정보 수정 DTO")
 public class MemberUpdateRequestDTO {
     @Schema(description = "회원 번호", example = "1", required = true)
     private Long id;

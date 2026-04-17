@@ -12,6 +12,6 @@ public class PostCreateRequestDTO {
     private String postTitle;
     @Schema(description = "게시글 내용", example = "게시글 내용1", required = true)
     private String postContent;
-
-    //화면에서 memberID 안받기 때문에 안넣음. (토큰에서 추출함.)
+    // 나중에 토큰에서 추출
+    // private Long memberId;
 }

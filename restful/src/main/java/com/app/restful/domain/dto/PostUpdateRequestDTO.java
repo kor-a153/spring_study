@@ -6,7 +6,7 @@ import org.springframework.stereotype.Component;
 
 @Component
 @Data
-@Schema(description = "회원정보 수정 DTO")
+@Schema(description = "회원 정보 수정 DTO")
 public class PostUpdateRequestDTO {
     @Schema(description = "게시글 제목", example = "수정된 게시글 제목", required = true)
     private String postTitle;
