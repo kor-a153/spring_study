@@ -111,12 +111,14 @@ public class MemberAPI {
     @ApiResponse(responseCode = "403", description = "권한 없음")
     @Parameter(
             name = "id",
-            description = "회원 번호",
+            description = "회원번호",
             required = true,
             in = ParameterIn.PATH,
             example = "1",
-            schema = @Schema(type = "number") // 스키마 타입
+            schema = @Schema(type = "number")
     )
+
+
     @DeleteMapping("/{id}")
     public ResponseEntity<ApiResponseDTO> withdraw(@PathVariable Long id){
         memberService.withdraw(id);
