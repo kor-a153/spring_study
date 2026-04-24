@@ -8,8 +8,9 @@ import java.net.URISyntaxException;
 import java.util.List;
 
 public interface OpenApiService {
+    // 펫 투어
     public List<PetTourDTO> fetchData() throws IOException;
 
-    // 교통체증
+    // 교통 체증
     public CongestionDTO fetchData2() throws IOException, URISyntaxException;
 }
