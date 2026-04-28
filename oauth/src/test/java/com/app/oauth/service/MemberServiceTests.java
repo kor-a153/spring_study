@@ -31,6 +31,7 @@ public class MemberServiceTests {
         MemberDTO memberDTO = new MemberDTO();
         memberDTO.setMemberEmail("test123@gmail.com");
         memberDTO.setMemberPassword("test123!@#");
+        memberDTO.setSocialMemberProvider("local");
         memberDTO.setMemberName("홍길동");
         memberDTO.setMemberNickname("개복치 홍길동");
 

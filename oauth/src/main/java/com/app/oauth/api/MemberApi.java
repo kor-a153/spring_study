@@ -32,6 +32,7 @@ public class MemberApi {
         return ResponseEntity.status(HttpStatus.OK).body(memberService.me(accessToken));
     }
 
+
 }
 
 

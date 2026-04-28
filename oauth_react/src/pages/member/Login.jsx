@@ -13,8 +13,20 @@ const Login = () => {
         const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
         const passwordRegex = /^(?=.*\d)(?=.*[a-z])(?=.*[!@#])[\da-zA-Z!@#]{8,}$/;
     
-        const { setIsAuthenticated } = useAuthStore()
+        const { setMember, setIsAuthenticated } = useAuthStore()
         const navigate = useNavigate()
+
+        // 소셜 로그인은 GET요청
+        const navigateGoogleAuth = () => {
+            window.location.href = "http://localhost:10000/oauth2/authorization/google"
+        }
+        const navigateNaverAuth = () => {
+            window.location.href = "http://localhost:10000/oauth2/authorization/naver"
+        }
+        const navigateKakaoAuth = () => {
+            window.location.href = "http://localhost:10000/oauth2/authorization/kakao"
+        }
+
     
         const login = handleSubmit(async (data) => {
             console.log(data)
@@ -36,12 +48,19 @@ const Login = () => {
                 }
                 return await res.json()
             })
-            .then((res) => {
+            .then(async (res) => {
                 // 정상 응답일 때
-                console.log(res)
-                const {success, message, data} = res
-
+                const response = await fetch("http://localhost:10000/api/members/me", {
+                    credentials: "include"
+                })
+    
+                if(!response.ok) throw new Error("Access Token Expired")
+                
+                const datas = await response.json()
+                const {success, message, data} = datas
+                // 초기 세팅
                 if(success){
+                    setMember(data)
                     setIsAuthenticated(true)
                     navigate("/")
                 }
@@ -92,6 +111,11 @@ const Login = () => {
                        )}
                    </div>
                    <button disabled={isSubmitting}>로그인</button>
+                   <div>
+                       <button onClick={navigateGoogleAuth}>구글 로그인</button>
+                       <button onClick={navigateKakaoAuth}>카카오 로그인</button>
+                       <button onClick={navigateNaverAuth}>네이버 로그인</button>
+                   </div>
                </form>
            </div>
        );
