@@ -14,7 +14,14 @@ public class MemberVO {
     private String memberName;
     private String memberNickname;
 
-    public static MemberVO from(MemberDTO memberJoinDTO){
+
+    {
+//        초기화 블럭
+        this.setMemberPicture("/default.jpg");
+        this.setMemberNickname("개복치 1단계");
+    }
+
+    public static MemberVO from(MemberDTO memberJoinDTO) {
         MemberVO memberVO = new MemberVO();
         memberVO.setId(memberJoinDTO.getId());
         memberVO.setMemberEmail(memberJoinDTO.getMemberEmail());

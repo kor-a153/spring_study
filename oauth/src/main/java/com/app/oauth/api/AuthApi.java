@@ -22,7 +22,6 @@ import org.springframework.web.bind.annotation.*;
 public class AuthApi {
 
     private final AuthService authService;
-    private final JwtTokenUtil jwtTokenUtil;
 
     // 일반 로그인
     @PostMapping("/login")
@@ -58,9 +57,8 @@ public class AuthApi {
     }
     // 소셜 로그인 -> security filter
 
-    // refresh -> accessToken을 재발급하는 api
     // 토큰 정보로 데이터 파싱 후 화면에 응답
-    @PostMapping("/refresh")
+    @GetMapping("/me")
     public ResponseEntity<ApiResponseDTO> me(
             @CookieValue(name = "refreshToken", required = false) String refreshToken
     ){
@@ -81,9 +79,7 @@ public class AuthApi {
 
         return ResponseEntity
                 .status(HttpStatus.OK)
-                .header(HttpHeaders.SET_COOKIE, accessTokenCookie.toString())
                 .body(ApiResponseDTO.of("토큰 재발급 완료"));
     }
-
 
 }

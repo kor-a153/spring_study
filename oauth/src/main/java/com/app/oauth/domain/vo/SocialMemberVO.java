@@ -12,7 +12,11 @@ public class SocialMemberVO {
     private String socialMemberProvider;
     private Long memberId;
 
-    public static SocialMemberVO from(MemberDTO memberJoinDTO){
+    {
+        this.setSocialMemberProvider("local");
+    }
+
+    public static SocialMemberVO from(MemberDTO memberJoinDTO) {
         SocialMemberVO socialMemberVO = new SocialMemberVO();
         socialMemberVO.setId(memberJoinDTO.getId());
         socialMemberVO.setSocialMemberProviderId(memberJoinDTO.getSocialMemberProviderId());

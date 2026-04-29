@@ -16,17 +16,16 @@ public class MemberResponseDTO {
     private String socialMemberProvider;
     private Long memberId;
 
-    public static MemberResponseDTO from(MemberDTO memberDTO){
+    public static MemberResponseDTO from(MemberDTO memberDTO) {
         MemberResponseDTO memberResponseDTO = new MemberResponseDTO();
         memberResponseDTO.setId(memberDTO.getId());
         memberResponseDTO.setMemberEmail(memberDTO.getMemberEmail());
-        memberResponseDTO.setMemberPicture(memberDTO.getMemberPicture());
         memberResponseDTO.setMemberName(memberDTO.getMemberName());
+        memberResponseDTO.setMemberPicture(memberDTO.getMemberPicture());
         memberResponseDTO.setMemberNickname(memberDTO.getMemberNickname());
         memberResponseDTO.setSocialMemberProviderId(memberDTO.getSocialMemberProviderId());
         memberResponseDTO.setSocialMemberProvider(memberDTO.getSocialMemberProvider());
         memberResponseDTO.setMemberId(memberDTO.getMemberId());
         return memberResponseDTO;
     }
-
 }

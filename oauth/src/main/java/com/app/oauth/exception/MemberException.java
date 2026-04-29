@@ -6,7 +6,7 @@ import org.springframework.http.HttpStatus;
 
 @Getter
 @NoArgsConstructor
-public class MemberException extends RuntimeException{
+public class MemberException extends RuntimeException {
 
     private HttpStatus httpStatus;
 

@@ -32,7 +32,8 @@ public class MemberApi {
         return ResponseEntity.status(HttpStatus.OK).body(memberService.me(accessToken));
     }
 
-
+    // /private/*으로 시작하는 모든 경로는 Token을 header에서 담아서 요청하게 만든다.
+    // 그리고 한번에 추출한다.
 }
 
 

@@ -11,7 +11,7 @@ public class SocialMemberDAO {
     private final SocialMemberMapper socialMemberMapper;
 
 //    소셜 회원 추가
-    public void save(SocialMemberVO socialMemberVO){
+    public void save(SocialMemberVO socialMemberVO) {
         socialMemberMapper.insert(socialMemberVO);
     }
 }

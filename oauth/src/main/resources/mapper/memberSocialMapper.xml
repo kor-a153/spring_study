@@ -8,4 +8,5 @@
         INSERT INTO TBL_SOCIAL_MEMBER
         VALUES(#{id}, #{socialMemberProviderId}, #{socialMemberProvider}, #{memberId})
     </insert>
+
 </mapper>
